@@ -1,0 +1,11 @@
+.navbar{
+  background-color: #0e1527;
+}
+.nav-link{
+    color: #bdbdbd;
+    margin-left: 20px;
+    font-size: 14px;
+}
+.nav-link:hover{
+    color: #ffff;
+}

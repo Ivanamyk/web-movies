@@ -1,0 +1,10 @@
+.footer{
+    background-color: #0e1527;
+    color:#ffff;
+    min-height: 60px;
+}
+.footer-txt{
+    font-size: 15px;
+  text-align: center;
+    right: 20rem;
+}
