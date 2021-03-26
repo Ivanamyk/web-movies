@@ -1,20 +1,14 @@
 import React, { FC } from 'react'
 import { Header, Footer } from '../../components/Layout/components'
-import { Card } from './components/Card'
+import { Main } from '../../components/Main'
 
 const Home: FC = () => {
     return (
-        <div>
+        <>
             <Header />
-
-            <Card />
-            <h1>hola</h1>
-            <h1>hola</h1>
-            <h1>hola</h1>
-            <h1>hola</h1>
-            <h1>hola</h1>
+            <Main />
             <Footer />
-        </div>
+        </>
     )
 }
 export { Home }
