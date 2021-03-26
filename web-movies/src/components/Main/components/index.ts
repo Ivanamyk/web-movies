@@ -1,1 +1,2 @@
-export { Card } from './Card'
+export { Carrousel } from './Carrousel'
+export { List } from './List'

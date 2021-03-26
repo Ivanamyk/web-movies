@@ -1,12 +1,13 @@
 import React, { FC } from "react";
-import { Card } from './components/Card'
+import { Carrousel, List } from './components'
 import "./main.css";
 
 const Main: FC = () => {
     return (
         <>
             <main className='main-pg'>
-                <Card />
+                <Carrousel />
+                <List />
             </main>
         </>
     );
