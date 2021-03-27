@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { getMovies } from '../../../../api/getMovies'
 import CarrImg from '../../../../assets/img/roses.jpg'
 
 
@@ -15,7 +16,7 @@ const Carrousel: FC = () => {
                     <div className="carousel-item active">
                         <img src={CarrImg} className="d-block w-100" alt="..."></img>
                         <div className="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
+                            <h5>iiii</h5>
                             <p>Some representative content for the first slide.</p>
                         </div>
                     </div>

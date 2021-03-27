@@ -1,11 +1,10 @@
 import React from 'react';
-import { Layout, Main } from './components'
-import { api } from './utilities'
 import { Screens } from './screens'
+import { getMovies } from './api/getMovies'
 
 
 function App() {
-
+  getMovies()
   return (
     <div className="App">
       <Screens />
