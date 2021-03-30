@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
-import { getMovies } from '../../../../api/getMovies'
+// import { getMovies } from '../../../../api/getMovies'
 import CarrImg from '../../../../assets/img/roses.jpg'
 
 
 const Carrousel: FC = () => {
+
     return (
         <>
             <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">

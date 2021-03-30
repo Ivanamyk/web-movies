@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState, FC } from 'react'
+import { MovieType } from '../../../../types'
+import { movie } from '../../../../api/movie'
 import './list.css'
 
-const List = () => {
+const List: FC = () => {
+    const [movies, setMovies] = useState<MovieType[]>();
+
+    useEffect(() => {
+        movie.get().then((response) => {
+            setMovies(response);
+        })
+    }, []);
+    //hacer map!
+    console.log(movies)
+
     return (
         <div className='row justify-content-center mt-5'>
             <div className='col-4 list-table'>
