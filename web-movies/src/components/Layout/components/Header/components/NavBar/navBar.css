@@ -9,3 +9,8 @@
 .nav-link:hover{
     color: #ffff;
 }
+.navbar-toggler{
+  background-color: #334372;
+  padding: .23rem .55rem;
+  margin-right: .40rem;
+}

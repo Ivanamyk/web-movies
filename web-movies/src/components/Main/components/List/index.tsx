@@ -7,7 +7,7 @@ const List: FC = () => {
     const [movies, setMovies] = useState<MovieType[]>();
 
     useEffect(() => {
-        movie.get().then((response) => {
+        movie.getPopular().then((response) => {
             setMovies(response);
         })
     }, []);
@@ -19,6 +19,7 @@ const List: FC = () => {
             <div className='col-4 list-table'>
                 <ul className="list-group">
                     <h4 className="list-group-item header-list">Peliculas Populares</h4>
+
                     <li className="list-group-item">item</li>
                 </ul>
             </div>

@@ -5,7 +5,7 @@ import './popLogo.css'
 const PopLogo: FC = () => {
     return (
         <div className="d-flex popLogo">
-            <img src={PopPic} alt="Popcorn img" height="55" />
+            <img src={PopPic} alt="Popcorn img" height="50" />
         </div>
     )
 }
