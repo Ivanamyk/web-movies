@@ -1,18 +1,18 @@
 import React, { FC } from 'react'
 import { Header, Footer } from '../../components/Layout/components'
-import { Carrousel, List } from './components'
-import './home.css'
+import { Card } from './components'
+import './newMovies.css'
 
-const Home: FC = () => {
+const NewMovies: FC = () => {
     return (
         <>
             <Header />
             <div className="main-pg">
-                <Carrousel />
-                <List />
+                <h2 className="nm-title">Últimos Lanzamientos</h2>
+                <Card />
             </div>
             <Footer />
         </>
     )
 }
-export { Home }
+export { NewMovies }
