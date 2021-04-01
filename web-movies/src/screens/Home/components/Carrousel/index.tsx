@@ -1,9 +1,21 @@
-import React, { FC } from 'react'
-// import { getMovies } from '../../../../api/getMovies'
+import React, { FC, useState, useEffect } from 'react'
 import CarrImg from '../../../../assets/img/roses.jpg'
+import { movie } from './../../../../api/movie'
+import { MovieType } from '../../../../types/index'
 
+interface Props {
+    data: MovieType,
+}
 
-const Carrousel: FC = () => {
+const Carrousel: FC<Props> = () => {
+    const [movies, setMovies] = useState<MovieType[]>();
+
+    useEffect(() => {
+        movie.getPopular().then((response) => {
+            setMovies(response);
+        })
+    }, []);
+    console.log(movies)
 
     return (
         <>
