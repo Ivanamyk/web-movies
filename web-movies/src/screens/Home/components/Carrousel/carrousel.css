@@ -2,3 +2,7 @@
     width: 50rem; 
     height: 270rem; 
 }
+.slider{
+height: 50vh;
+object-fit: cover;
+}

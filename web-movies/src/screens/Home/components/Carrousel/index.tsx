@@ -1,13 +1,14 @@
 import React, { FC, useState, useEffect } from 'react'
 import CarrImg from '../../../../assets/img/roses.jpg'
+import { CardImg, Carousel } from 'react-bootstrap'
 import { movie } from './../../../../api/movie'
 import { MovieType } from '../../../../types/index'
 
 interface Props {
-    data: MovieType,
+    data?: MovieType,
 }
 
-const Carrousel: FC<Props> = () => {
+const Carrousel: FC<Props> = ({ data }) => {
     const [movies, setMovies] = useState<MovieType[]>();
 
     useEffect(() => {
@@ -17,46 +18,28 @@ const Carrousel: FC<Props> = () => {
     }, []);
     console.log(movies)
 
+    const imgBase = "https://image.tmdb.org/t/p/"
+    const imgWith = "w500"
+
+
     return (
         <>
-            <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src={CarrImg} className="d-block w-100" alt="..."></img>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>iiii</h5>
-                            <p>Some representative content for the first slide.</p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <img src={CarrImg} className="d-block w-100" alt="..."></img>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <img src={CarrImg} className="d-block w-100" alt="..."></img>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                    </div>
-                </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
-            </div>
+            <Carousel>
+                {movies && movies.map((movie: MovieType) => (
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100 slider"
+                            src={imgBase + imgWith + movie.backdrop_path}
+                            alt="First slide"
+                        />
+                        <Carousel.Caption>
+                            <h3>{movie.title}</h3>
+                            <p>{movie.overview}</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                ))
+                }
+            </Carousel>
         </>
     )
 }
