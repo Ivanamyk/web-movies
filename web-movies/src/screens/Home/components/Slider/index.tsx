@@ -1,7 +1,6 @@
 import React, { FC, useState, useEffect } from 'react'
-import CarrImg from '../../../../assets/img/roses.jpg'
 import { Carousel } from 'react-bootstrap'
-import { movie } from '../Slider/movie'
+import { movie } from '../../../../api/movies'
 import { MovieType } from '../../../../types/index'
 import './slider.css'
 
@@ -9,7 +8,7 @@ interface Props {
     data?: MovieType,
 }
 
-const Slider: FC<Props> = ({ data }) => {
+const Slider: FC<Props> = () => {
     const [movies, setMovies] = useState<MovieType[]>();
 
     useEffect(() => {
@@ -19,17 +18,17 @@ const Slider: FC<Props> = ({ data }) => {
     }, []);
 
     const imgBase = "https://image.tmdb.org/t/p/"
-    const imgWith = "w500"
+    const imgWith = "w1280"
 
-    // const topFive = movies && movies.slice(0, 3)
+    const topFive = movies && movies.slice(0, 5)
 
     // const topMovies = movies && movies.filter(movie => movie.vote_average >= 8)
 
     return (
         <>
             <Carousel fade>
-                {movies && movies.map((movie: MovieType) => (
-                    <Carousel.Item interval={1700}>
+                {topFive && topFive.map((movie: MovieType) => (
+                    <Carousel.Item interval={1800}>
                         <img
                             className="d-block slider"
                             src={imgBase + imgWith + movie.backdrop_path}
