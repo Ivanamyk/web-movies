@@ -3,8 +3,37 @@
   color: #fff;
   font-size: 20px;
   text-align: center;
-  }
-  .list-table{
-      margin-right: 4rem;
-      margin-left: 4rem;
-  }
+}
+.main-list{
+  background-color: #0e1527;
+}
+.list-table{
+   margin-right: 4rem;
+   margin-left: 4rem;
+}
+.list-img{
+    width: 50px;
+}
+.scroll{
+  max-height: 50vh;
+  overflow-y: auto;
+}
+.movie-name{
+  margin-left: 20px;
+}
+.movie-item{
+border-bottom:#eeeeeed5 0.5px solid;
+}
+.detail-button{
+color:rgb(158, 158, 158);
+margin-top: 23px;
+padding-right: 8px;
+flex-direction: row-reverse;
+float: right;
+}
+.detail-button:hover{
+  color:#11afa2;
+}
+.movie-item:hover{
+background-color: #e2eaf3;
+}

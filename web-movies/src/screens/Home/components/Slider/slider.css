@@ -1,0 +1,11 @@
+.slider{
+height: 30rem;
+object-fit: cover;
+width: 100%;
+}
+.movie-descrip{
+    padding: 37px;
+    color: rgb(82, 79, 79);
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.658);
+}
