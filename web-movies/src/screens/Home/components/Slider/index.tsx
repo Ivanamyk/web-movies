@@ -1,14 +1,15 @@
 import React, { FC, useState, useEffect } from 'react'
 import CarrImg from '../../../../assets/img/roses.jpg'
-import { CardImg, Carousel } from 'react-bootstrap'
-import { movie } from './../../../../api/movie'
+import { Carousel } from 'react-bootstrap'
+import { movie } from '../Slider/movie'
 import { MovieType } from '../../../../types/index'
+import './slider.css'
 
 interface Props {
     data?: MovieType,
 }
 
-const Carrousel: FC<Props> = ({ data }) => {
+const Slider: FC<Props> = ({ data }) => {
     const [movies, setMovies] = useState<MovieType[]>();
 
     useEffect(() => {
@@ -16,25 +17,29 @@ const Carrousel: FC<Props> = ({ data }) => {
             setMovies(response);
         })
     }, []);
-    console.log(movies)
 
     const imgBase = "https://image.tmdb.org/t/p/"
     const imgWith = "w500"
 
+    // const topFive = movies && movies.slice(0, 3)
+
+    // const topMovies = movies && movies.filter(movie => movie.vote_average >= 8)
 
     return (
         <>
-            <Carousel>
+            <Carousel fade>
                 {movies && movies.map((movie: MovieType) => (
-                    <Carousel.Item>
+                    <Carousel.Item interval={1700}>
                         <img
-                            className="d-block w-100 slider"
+                            className="d-block slider"
                             src={imgBase + imgWith + movie.backdrop_path}
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3>{movie.title}</h3>
-                            <p>{movie.overview}</p>
+                            <div className='movie-descrip'>
+                                <h3>{movie.title}</h3>
+                                <p>{movie.overview}</p>
+                            </div>
                         </Carousel.Caption>
                     </Carousel.Item>
                 ))
@@ -43,4 +48,4 @@ const Carrousel: FC<Props> = ({ data }) => {
         </>
     )
 }
-export { Carrousel }
+export { Slider }

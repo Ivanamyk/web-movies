@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { Header, Footer } from '../../components/Layout/components'
-import { Carrousel, List } from './components'
+import { Slider, List } from './components'
 import './home.css'
 
 const Home: FC = () => {
@@ -8,7 +8,7 @@ const Home: FC = () => {
         <>
             <Header />
             <div className="main-pg">
-                <Carrousel />
+                <Slider />
                 <List />
             </div>
             <Footer />

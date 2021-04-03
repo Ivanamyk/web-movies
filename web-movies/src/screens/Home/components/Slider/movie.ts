@@ -1,5 +1,5 @@
-import { MovieType } from '../types';
-import { api } from './api'
+import { MovieType } from './../../../../types';
+import { api } from './../../../../api/api'
 
 type GetMoviesResponse = {
   results: MovieType[],
