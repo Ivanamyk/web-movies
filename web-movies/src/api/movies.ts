@@ -18,5 +18,10 @@ const getTopRated = async (): Promise<MovieType[]> => {
     return data.results;
 };
 
-export const movie = { getPopular, getTopRated };
+const getId = async (): Promise<MovieType[]> => {
+    const { data } = await api.get<GetMoviesResponse>('/movie/{movie_id}')
+    return data.results;
+};
+
+export const movie = { getPopular, getTopRated, getId };
 

@@ -1,0 +1,18 @@
+.main-pg{
+    background-color: #fff;
+    min-height: 600px;
+}
+.search-group{
+    margin-top: 55px;
+}
+.search-bar{
+    border-radius: 14px;
+    background-color: #f5f1f165;
+}
+.search-bar:hover{
+    border: 2px solid #83a2f7;
+}
+.title-search{
+    text-align: center;
+    margin-bottom: 25px;
+}
