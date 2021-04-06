@@ -47,5 +47,6 @@ export type MovieType = {
     spoken_languages: SpokenLanguage[],
     status: string,
     tagline: string,
+    query: string,
 
 }
