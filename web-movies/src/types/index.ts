@@ -24,7 +24,7 @@ export type MovieType = {
     production_companies: ProductionCompanie[],
     genres: Genre[],
     production_countries: ProductionCountrie[],
-    id: number,
+    id: string,
     adult: boolean,
     backdrop_path: string,
     belongs_to_collection: string | null,

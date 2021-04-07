@@ -18,8 +18,8 @@ const getTopRated = async (): Promise<MovieType[]> => {
     return data.results;
 };
 
-const getId = async (): Promise<MovieType[]> => {
-    const { data } = await api.get<GetMoviesResponse>('/movie/{movie_id}')
+const getId = async (id: string): Promise<MovieType[]> => {
+    const { data } = await api.get<GetMoviesResponse>('/movie/' + id)
     return data.results;
 };
 

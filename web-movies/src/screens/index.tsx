@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Home } from './Home';
 import { NewMovies } from './NewMovies'
 import { Search } from './Search';
+import { Details } from './Details';
 
 const Screens: FC = () => {
     return (
@@ -10,6 +11,7 @@ const Screens: FC = () => {
             <Switch>
                 <Route path='/new-movies' component={NewMovies} />
                 <Route path='/search' component={Search} />
+                <Route path='/details/:id' component={Details} />
                 <Route path='/' component={Home} />
             </Switch>
         </Router>
