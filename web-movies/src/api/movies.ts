@@ -18,6 +18,11 @@ const getTopRated = async (): Promise<MovieType[]> => {
     return data.results;
 };
 
+const getNewMovies = async (): Promise<MovieType[]> => {
+    const { data } = await api.get<GetMoviesResponse>('/movie/now_playing')
+    return data.results;
+};
+
 const getId = async (): Promise<MovieType[]> => {
     const { data } = await api.get<GetMoviesResponse>('/movie/{movie_id}')
     return data.results;
@@ -28,5 +33,5 @@ const getSearch = async (query: string): Promise<MovieType[]> => {
     return data.results;
 };
 
-export const movie = { getPopular, getTopRated, getId, getSearch };
+export const movie = { getPopular, getTopRated, getNewMovies, getId, getSearch };
 
