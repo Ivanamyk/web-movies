@@ -1,38 +1,48 @@
-import React, { FC, useEffect, useState } from 'react'
-import { movie } from './../../../../api/movies'
+import React, { FC } from 'react'
 import { MovieType } from '../../../../types';
+import { Genre } from './../../../../types'
 import { Card } from 'react-bootstrap'
+import * as Icon from 'react-bootstrap-icons'
+import './idMovies.css'
 
 interface Props {
-    id: string,
+    movie: MovieType,
 }
 
-const IdMovie: FC<Props> = ({ id }) => {
-    const [details, setDetails] = useState<MovieType[]>();
+const imgBase = "https://image.tmdb.org/t/p/"
+const imgWidth = "w500"
+const bgWidth = "w1280"
 
-    useEffect(() => {
-        movie.getId('651671').then((response) => {
-            setDetails(response);
-        })
-    }, []);
-
-
+const IdMovie: FC<Props> = ({ movie }) => {
     return (
         <>
-            <div className="main-pg">
-                <div>
-                    {details && details.map((movie: MovieType) => (
+            <div className='container col-10' style={{
+                backgroundImage: `${imgBase + bgWidth + movie.backdrop_path}`
+            }}>
+                <div className='row'>
+                    <div className='col-5'>
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={movie.poster_path} />
-                            <Card.Title>{movie.title}</Card.Title>
+                            <Card.Img variant="top" src={imgBase + imgWidth + movie.poster_path} />
                         </Card>
-                    ))
-                    }
+                    </div>
+                    <div className='data-header col-5'>
+                        <h2>{movie.title}</h2>
+                        <span>{movie.release_date.slice(0, 4)}</span>
+                        <button className='btn btn-dark m-3'><Icon.PlayCircle /> ver trailer</button>
+                        <div className='data-info'>
+                            <h3>General</h3>
+                            <p>{movie.overview}</p>
+                            <h4>Géneros</h4>
+                            <u>
+                                {movie.genres && movie.genres.map((movie: Genre) => (
+                                    <li>{movie.name}</li>
+                                ))
+                                }
+                            </u>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h2 className="nm-title">Details</h2>
-                </div>
-            </div>
+            </div >
         </>
     )
 }
