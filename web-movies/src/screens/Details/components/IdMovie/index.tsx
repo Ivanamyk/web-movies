@@ -1,48 +1,62 @@
-import React, { FC } from 'react'
-import { MovieType } from '../../../../types';
-import { Genre } from './../../../../types'
+import React, { FC, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
+import { movie } from './../../../../api/movies'
+import { MovieType, Genre, IframeHTMLAttributes, VideoType } from '../../../../types';
 import { Card } from 'react-bootstrap'
 import * as Icon from 'react-bootstrap-icons'
 import './idMovies.css'
 
 interface Props {
-    movie: MovieType,
+    movies: MovieType,
 }
 
+const videoBase = 'https://www.youtube.com/watch?v='
 const imgBase = "https://image.tmdb.org/t/p/"
 const imgWidth = "w500"
 const bgWidth = "w1280"
 
-const IdMovie: FC<Props> = ({ movie }) => {
+const IdMovie: FC<Props> = ({ movies }) => {
+    const [video, setVideo] = useState<VideoType | undefined>(undefined);
+
+    useEffect(() => {
+        movie.getVid(`${movies.id}`).then((response) => {
+            setVideo(response);
+        })
+    }, []);
+
     return (
         <>
-            <div className='container col-10' style={{
-                backgroundImage: `${imgBase + bgWidth + movie.backdrop_path}`
+            <div className='main-pg' style={{
+                backgroundImage: `url(${imgBase + bgWidth + movies.backdrop_path})`
             }}>
-                <div className='row'>
-                    <div className='col-5'>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={imgBase + imgWidth + movie.poster_path} />
-                        </Card>
-                    </div>
-                    <div className='data-header col-5'>
-                        <h2>{movie.title}</h2>
-                        <span>{movie.release_date.slice(0, 4)}</span>
-                        <button className='btn btn-dark m-3'><Icon.PlayCircle /> ver trailer</button>
-                        <div className='data-info'>
-                            <h3>General</h3>
-                            <p>{movie.overview}</p>
-                            <h4>Géneros</h4>
-                            <u>
-                                {movie.genres && movie.genres.map((movie: Genre) => (
-                                    <li>{movie.name}</li>
-                                ))
-                                }
-                            </u>
+                <div className='card-movie'>
+                    <div className='container '>
+                        <div className='row'>
+                            <div className='col-5 poster'>
+                                <Card>
+                                    <Card.Img variant="top" src={imgBase + imgWidth + movies.poster_path} />
+                                </Card>
+                            </div>
+                            <div className='data-header col-5'>
+                                <h2 className='movie-title'>{movies.title} <span className='date'>({movies.release_date.slice(0, 4)})</span></h2>
+                                <div className='data-info'>
+                                    <h3 className='info-title'>Information</h3>
+                                    <p>{movies.overview}</p>
+                                    <h4 className='genres-title'>Genres</h4>
+                                    <u className='genres'>
+                                        {movies.genres && movies.genres.map((movies: Genre) => (
+                                            <li>{movies.name}</li>
+                                        ))
+                                        }
+                                    </u>
+                                    <a className='btn btn-trailer' href={videoBase + video?.results[0].key}><Icon.PlayCircle /> Watch Trailer</a>
+                                    {/* <Link className='btn-trailer' to={<iframe width="1600" height="774" src={videoBase} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>cLICK</iframe>} /> */}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div >
+                    </div >
+                </div >
+            </div>
         </>
     )
 }

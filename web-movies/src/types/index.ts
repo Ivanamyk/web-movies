@@ -20,11 +20,42 @@ type SpokenLanguage = {
     name: string,
 }
 
+export interface IframeHTMLAttributes extends HTMLElement {
+    allow?: string;
+    allowFullScreen?: boolean;
+    frameBorder?: number | string;
+    height?: number | string;
+    marginHeight?: number;
+    marginWidth?: number;
+    name?: string;
+    src?: string;
+    width?: number | string;
+}
+
+type Results = {
+    id: string,
+    iso_639_1: string,
+    iso_3166_1: string,
+    key: string,
+    name: string,
+    site: string,
+    size: number,
+    type: string,
+}
+
+export type VideoType = {
+    id: string,
+    results: Results[],
+}
+
+
 export type MovieType = {
     production_companies: ProductionCompanie[],
     genres: Genre[],
+    chars: IframeHTMLAttributes[]
     production_countries: ProductionCountrie[],
     id: string,
+    key: string,
     adult: boolean,
     backdrop_path: string,
     belongs_to_collection: string | null,

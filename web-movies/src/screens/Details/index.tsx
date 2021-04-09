@@ -4,7 +4,6 @@ import { Header, Footer } from './../../components/Layout/components'
 import { movie } from './../../api/movies'
 import { MovieType } from '../../types';
 import { IdMovie } from './components/IdMovie'
-import './details.css'
 
 const Details: FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
     const id = match.params.id
@@ -19,9 +18,9 @@ const Details: FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
     return (
         <>
             <Header />
-            <div className="main-pg">
+            <div>
                 {details
-                    ? <IdMovie movie={details} />
+                    ? <IdMovie movies={details} />
                     : ''}
             </div>
             <Footer />

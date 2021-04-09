@@ -20,16 +20,16 @@ const NavBar: FC = () => {
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="./home">Home</a>
+                                <a className="nav-link active" aria-current="page" href="/home">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="./new-movies">Últimos Lanzamientos</a>
+                                <a className="nav-link" href="/new-movies">Últimos Lanzamientos</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="./popular">Populares</a>
+                                <a className="nav-link" href="/popular">Populares</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="./search">Buscar</a>
+                                <a className="nav-link" href="/search">Buscar</a>
                             </li>
                         </ul>
                     </div>
