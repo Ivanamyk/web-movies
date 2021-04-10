@@ -13,7 +13,7 @@ const Details: FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
         movie.getId(id).then((response) => {
             setDetails(response);
         })
-    }, []);
+    }, [id]);
 
     return (
         <>

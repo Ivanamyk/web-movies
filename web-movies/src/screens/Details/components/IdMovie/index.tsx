@@ -22,7 +22,7 @@ const IdMovie: FC<Props> = ({ movies }) => {
         movie.getVid(`${movies.id}`).then((response) => {
             setVideo(response);
         })
-    }, []);
+    }, [movies.id]);
 
     return (
         <>
