@@ -20,7 +20,7 @@ const Search: FC = () => {
         movie.getSearch(query).then((response) => {
             setMovieCard(response);
         })
-    }, [<Card />]);
+    }, [query]);
 
     const imgBase = "https://image.tmdb.org/t/p/"
     const imgWith = "w300"
