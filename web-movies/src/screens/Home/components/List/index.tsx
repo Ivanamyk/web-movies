@@ -2,7 +2,6 @@ import React, { useEffect, useState, FC } from 'react'
 import { MovieType } from '../../../../types'
 import { movie } from './../../../../api/movies'
 import * as Icon from 'react-bootstrap-icons'
-import { api } from '../../../../api/api'
 import './list.css'
 
 
