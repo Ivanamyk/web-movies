@@ -8,19 +8,12 @@ import './newMovies.css'
 
 const CardMovies: FC = () => {
     const [newMovies, setNewMovies] = useState<MovieType[]>();
-    const [pageNumber, setPageNumber] = useState(0);
 
-    const moviesPerPage = 10;
-    const pagesVisited = pageNumber * moviesPerPage;
-
-
-    // useEffect(() => {
-    //     movie.getNewMovies().then((response) => {
-    //         setNewMovies(response);
-    //     })
-    // }, []);
-
-    // const displayMovies = movie.slice(pagesVisited)
+    useEffect(() => {
+        movie.getNewMovies().then((response) => {
+            setNewMovies(response);
+        })
+    }, []);
 
     const imgBase = "https://image.tmdb.org/t/p/"
     const imgWith = "w300"
