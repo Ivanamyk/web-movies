@@ -27,7 +27,7 @@ const CardMovies: FC = () => {
                         <Card className='nm-card' style={{ width: '15rem' }}>
                             <Card.Img className='card-img' variant="top" title={movie.title} src={imgBase + imgWith + movie.poster_path} />
                             <Card.Title className="nm-title">{movie.title}</Card.Title>
-                            <Button className='eye-btn' type='button' href='./details/:id'>
+                            <Button className='eye-btn' type='button' href={"/details/" + movie.id}>
                                 <Icon.EyeFill size={20} />
                             </Button>
                         </Card>
