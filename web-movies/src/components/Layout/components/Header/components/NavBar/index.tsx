@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { Link } from 'react-router-dom'
 import { PopLogo } from './components/PopLogo'
 import './navBar.css'
 
@@ -7,9 +8,9 @@ const NavBar: FC = () => {
         <>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">
+                    <span className="navbar-brand">
                         <PopLogo />
-                    </a>
+                    </span>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"><svg viewBox="0 0 100 80" width="40" height="40">
                             <rect width="80" height="10"></rect>
@@ -20,16 +21,16 @@ const NavBar: FC = () => {
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/home">Home</a>
+                                <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/new-movies">Últimos Lanzamientos</a>
+                                <Link className="nav-link" to="/new-movies">Últimos Lanzamientos</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/popular">Populares</a>
+                                <Link className="nav-link" to="/popular">Populares</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/search">Buscar</a>
+                                <Link className="nav-link" to="/search">Buscar</Link>
                             </li>
                         </ul>
                     </div>
