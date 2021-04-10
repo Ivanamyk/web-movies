@@ -33,11 +33,6 @@ const getSearch = async (query: string): Promise<MovieType[]> => {
     return data.results;
 };
 
-const getSearch = async (query: string): Promise<MovieType[]> => {
-    const { data } = await api.get<GetMoviesResponse>('search/movie?query=' + query)
-    return data.results;
-};
-
 export const movie = { getPopular, getTopRated, getId, getVid, getSearch };
 
 
