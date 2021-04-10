@@ -20,7 +20,8 @@ const Search: FC = () => {
         movie.getSearch(query).then((response) => {
             setMovieCard(response);
         })
-    }, [<Card />]);
+    }, [query]);
+
 
     const imgBase = "https://image.tmdb.org/t/p/"
     const imgWith = "w300"
@@ -38,7 +39,9 @@ const Search: FC = () => {
                 <div className='row'>
                     {movieCard && movieCard.map((movie: MovieType) => (
                         <Card className='search-card' style={{ width: '15rem' }}>
-                            <Card.Img variant="top" title={movie.title} src={imgBase + imgWith + movie.poster_path} />
+
+                            <Card.Img variant="top" src={imgBase + imgWith + movie.poster_path} />
+
                             <Card.Body className='card-body'>
                                 <Card.Title>{movie.title}</Card.Title>
                                 <Button className='eye-button' type='button' href='./new-movies'>
