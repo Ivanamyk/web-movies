@@ -1,16 +1,12 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { Header, Footer } from '../../components/Layout/components'
-import { Card } from './components'
-import './newMovies.css'
+import { CardMovies } from './components/CardMovies'
 
-const NewMovies: FC = () => {
+const NewMovies = () => {
     return (
         <>
             <Header />
-            <div className="main-pg">
-                <h2 className="nm-title">Últimos Lanzamientos</h2>
-                <Card />
-            </div>
+            <CardMovies />
             <Footer />
         </>
     )
