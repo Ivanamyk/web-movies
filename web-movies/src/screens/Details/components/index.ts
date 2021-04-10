@@ -1,0 +1,3 @@
+export { IdMovie } from './IdMovie'
+
+
