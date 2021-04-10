@@ -23,7 +23,7 @@ const List: FC = () => {
     }, []);
 
     const imgBase = "https://image.tmdb.org/t/p/"
-    const imgWith = "w500"
+    const imgWidth = "w500"
 
     return (
         <div className='row justify-content-center mt-5'>
@@ -33,8 +33,8 @@ const List: FC = () => {
                     <div className='scroll'>
                         {movies && movies.map((movie: MovieType) => (
                             <li className="list-group-item movie-item">
-                                <img src={imgBase + imgWith + movie.poster_path} className='list-img' alt="" /><span className='movie-name'>{movie.title}</span>
-                                <a className='detail-button' href={"/movie/" + movie.id}><Icon.ArrowRightCircle size={27} /></a>
+                                <img src={imgBase + imgWidth + movie.poster_path} className='list-img' alt="" /><span className='movie-name'>{movie.title}</span>
+                                <a className='detail-button' href={"/details/" + movie.id}><Icon.ArrowRightCircle size={27} /></a>
                             </li>
                         ))
                         }
@@ -47,8 +47,8 @@ const List: FC = () => {
                     <div className='scroll'>
                         {topRated && topRated.map((movie: MovieType) => (
                             <li className="list-group-item movie-item">
-                                <img src={imgBase + imgWith + movie.poster_path} className='list-img' alt="" /><span className='movie-name'>{movie.title}</span>
-                                <a className='detail-button' href={"/movie/" + movie.id}><Icon.ArrowRightCircle size={27} /></a>
+                                <img src={imgBase + imgWidth + movie.poster_path} className='list-img' alt="" /><span className='movie-name'>{movie.title}</span>
+                                <a className='detail-button' href={"/details/" + movie.id}><Icon.ArrowRightCircle size={27} /></a>
                             </li>
                         ))
                         }
