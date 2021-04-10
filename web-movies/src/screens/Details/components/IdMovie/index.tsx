@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { movie } from './../../../../api/movies'
-import { MovieType, Genre, IframeHTMLAttributes, VideoType } from '../../../../types';
+import { MovieType, Genre, VideoType } from '../../../../types';
 import { Card } from 'react-bootstrap'
 import * as Icon from 'react-bootstrap-icons'
 import './idMovies.css'
