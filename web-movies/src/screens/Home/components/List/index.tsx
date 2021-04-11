@@ -4,10 +4,9 @@ import { movie } from './../../../../api/movies'
 import * as Icon from 'react-bootstrap-icons'
 import './list.css'
 
-
 const List: FC = () => {
     const [movies, setMovies] = useState<MovieType[]>();
-    const [topRated, setTopRated] = useState<MovieType[]>();
+    // const [topRated, setTopRated] = useState<MovieType[]>();
 
     useEffect(() => {
         movie.getPopular().then((response) => {
@@ -15,11 +14,11 @@ const List: FC = () => {
         })
     }, []);
 
-    useEffect(() => {
-        movie.getTopRated().then((response) => {
-            setTopRated(response);
-        })
-    }, []);
+    // useEffect(() => {
+    //     movie.getTopRated().then((response) => {
+    //         setTopRated(response);
+    //     })
+    // }, []);
 
     const imgBase = "https://image.tmdb.org/t/p/"
     const imgWidth = "w500"
@@ -40,7 +39,7 @@ const List: FC = () => {
                     </div>
                 </ul>
             </div>
-            <div className='col-4 list-table'>
+            {/* <div className='col-4 list-table'>
                 <ul className="list-group main-list">
                     <h4 className="list-group-item header-list">Peliculas Mejor Puntuadas</h4>
                     <div className='scroll'>
@@ -53,7 +52,7 @@ const List: FC = () => {
                         }
                     </div>
                 </ul>
-            </div>
+            </div> */}
         </div>
     )
 }

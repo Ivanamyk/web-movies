@@ -1,11 +1,12 @@
 import React from 'react';
-import { Screens } from './screens'
+import { Paginator } from './components/Layout/components';
+// import { Screens } from './screens'
 
 
 function App() {
   return (
     <div className="App">
-      <Screens />
+      <Paginator />
 
     </div>
   );

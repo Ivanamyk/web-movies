@@ -13,11 +13,10 @@ const getPopular = async (): Promise<MovieType[]> => {
     return data.results;
 };
 
-const getTopRated = async (): Promise<MovieType[]> => {
-    const { data } = await api.get<GetMoviesResponse>('/movie/top_rated')
-    return data.results;
+const getTopRated = async (page: number): Promise<GetMoviesResponse> => {
+    const { data } = await api.get<GetMoviesResponse>(`movie/top_rated?page=${page}`)
+    return data;
 };
-
 
 const getNewMovies = async (): Promise<MovieType[]> => {
     const { data } = await api.get<GetMoviesResponse>('/movie/now_playing')
