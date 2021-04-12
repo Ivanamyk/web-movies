@@ -21,6 +21,8 @@ const IdMovie: FC<Props> = ({ movies }) => {
     useEffect(() => {
         movie.getVid(`${movies.id}`).then((response) => {
             setVideo(response);
+        }).catch(error => {
+            console.error(error);
         })
     }, [movies.id]);
 

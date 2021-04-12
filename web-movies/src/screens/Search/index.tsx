@@ -1,27 +1,33 @@
 import React, { FC, ChangeEvent, useEffect, useState } from "react"
 import { movie } from './../../api/movies'
 import { MovieType } from '../../types';
+import { useHistory } from "react-router-dom";
 import { Form, Card, Button } from 'react-bootstrap'
 import * as Icon from 'react-bootstrap-icons'
 import { Header, Footer } from '../../components/Layout/components'
 import './search.css'
 
 const Search: FC = () => {
-    const [query, setQuery] = useState("");
+    const [query, setQuery] = useState('');
     const [movieCard, setMovieCard] = useState<MovieType[]>();
+
+    // const queryString = window.location.search;
+    // const urlParams = new URLSearchParams(queryString);
+    // const searchQuery = urlParams.get('query')
+
+    const history = useHistory();
 
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         setQuery(e.target.value)
         movie.getSearch(query);
-        console.log(e.target.value)
     };
 
     useEffect(() => {
         movie.getSearch(query).then((response) => {
             setMovieCard(response);
+            history.push(`/search?s=${query}` ?? 'a');
         })
     }, [query]);
-
 
     const imgBase = "https://image.tmdb.org/t/p/"
     const imgWith = "w300"
@@ -44,7 +50,7 @@ const Search: FC = () => {
 
                             <Card.Body className='card-body'>
                                 <Card.Title>{movie.title}</Card.Title>
-                                <Button className='eye-button' type='button' href='./new-movies'>
+                                <Button className='eye-button' type='button' href={"/details/" + movie.id}>
                                     <Icon.EyeFill size={20} />
                                 </Button>
                             </Card.Body>
