@@ -19,15 +19,12 @@ const Slider: FC<Props> = () => {
 
     const imgBase = "https://image.tmdb.org/t/p/"
     const imgWith = "w1280"
-
-    const topFive = movies && movies.slice(0, 5)
-
-    // const topMovies = movies && movies.filter(movie => movie.vote_average >= 8)
+    const topTen = movies && movies.slice(0, 10)
 
     return (
         <>
             <Carousel fade>
-                {topFive && topFive.map((movie: MovieType) => (
+                {topTen && topTen.map((movie: MovieType) => (
                     <Carousel.Item interval={1800}>
                         <img
                             className="d-block slider"
@@ -35,7 +32,7 @@ const Slider: FC<Props> = () => {
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <div className='movie-descrip'>
+                            <div className='movie-overview'>
                                 <h3>{movie.title}</h3>
                                 <p>{movie.overview}</p>
                             </div>
