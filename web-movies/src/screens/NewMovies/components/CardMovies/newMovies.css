@@ -1,11 +1,13 @@
 .main-pg{
     background-color: black;
-    min-height: 600px;
+    min-height: 1600px;
 }
 .page-title{
     font-size: 26px;
-    margin: 42px;
+    padding-top: 43px;
+    padding-bottom: 43px;
     text-align: center;
+    color: #999595;
 }
 .nm-card{
     padding: 1px;
