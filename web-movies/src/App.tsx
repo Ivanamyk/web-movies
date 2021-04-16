@@ -1,5 +1,6 @@
 import React from 'react';
 import { Screens } from './screens'
+import './app.css'
 
 
 function App() {
