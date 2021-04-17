@@ -1,7 +1,6 @@
 import React, { useEffect, useState, FC } from 'react'
 import { MovieType } from '../../../../types'
 import { movie } from './../../../../api/movies'
-import * as Icon from 'react-bootstrap-icons'
 import './list.css'
 
 const List: FC = () => {
@@ -31,8 +30,7 @@ const List: FC = () => {
                     <div className='scroll'>
                         {popularMovies && popularMovies.map((movie: MovieType) => (
                             <li className="list-group-item movie-item">
-                                <img src={imgBase + imgWidth + movie.poster_path} className='list-img' alt="" /><span className='movie-name'>{movie.title}</span>
-                                <a className='detail-button' href={"/details/" + movie.id}><Icon.ArrowRightCircle size={27} /></a>
+                                <img src={imgBase + imgWidth + movie.poster_path} className='list-img' alt="" /><a className='movie-name' href={"/details/" + movie.id} >{movie.title}</a>
                             </li>
                         ))
                         }
@@ -45,8 +43,7 @@ const List: FC = () => {
                     <div className='scroll'>
                         {topRated && topRated.map((movie: MovieType) => (
                             <li className="list-group-item movie-item">
-                                <img src={imgBase + imgWidth + movie.poster_path} className='list-img' alt="" /><span className='movie-name'>{movie.title}</span>
-                                <a className='detail-button' href={"/details/" + movie.id}><Icon.ArrowRightCircle size={27} /></a>
+                                <img src={imgBase + imgWidth + movie.poster_path} className='list-img' alt="" /><a className='movie-name' href={"/details/" + movie.id}>{movie.title}</a>
                             </li>
                         ))
                         }

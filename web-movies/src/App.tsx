@@ -1,6 +1,7 @@
 import React from 'react';
-import { Paginator } from './components/Layout/components';
-// import { Screens } from './screens'
+import { Screens } from './screens'
+import './app.css'
+
 
 
 function App() {

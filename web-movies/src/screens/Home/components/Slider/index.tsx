@@ -33,7 +33,7 @@ const Slider: FC<Props> = () => {
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <div className='movie-descrip'>
+                            <div className='movie-overview'>
                                 <h3>{movie.title}</h3>
                                 <p>{movie.overview}</p>
                             </div>

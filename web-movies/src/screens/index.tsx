@@ -4,6 +4,7 @@ import { Home } from './Home';
 import { NewMovies } from './NewMovies'
 import { Search } from './Search';
 import { Details } from './Details';
+import { Popular } from './Popular'
 
 const Screens: FC = () => {
     return (
@@ -11,6 +12,7 @@ const Screens: FC = () => {
             <Switch>
                 <Route path='/details/:id' component={Details} />
                 <Route path='/new-movies' component={NewMovies} />
+                <Route path='/popular' component={Popular} />
                 <Route path='/search' component={Search} />
                 <Route path='/' component={Home} />
             </Switch>
