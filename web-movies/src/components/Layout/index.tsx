@@ -1,13 +1,13 @@
 import React, { FC } from "react";
-import { Header, Footer } from "./components";
+import { Header, Footer, Paginator } from "./components";
 
-const Layout: FC = ({ children, }) => {
+const Layout: FC = () => {
 
     return (
         <>
             <div className="contenedor">
                 <Header />
-                {children}
+                {/* <Paginator /> */}
                 <Footer />
             </div>
         </>

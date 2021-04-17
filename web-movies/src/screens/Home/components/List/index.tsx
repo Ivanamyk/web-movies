@@ -3,14 +3,13 @@ import { MovieType } from '../../../../types'
 import { movie } from './../../../../api/movies'
 import './list.css'
 
-
 const List: FC = () => {
-    const [movies, setMovies] = useState<MovieType[]>();
+    const [popularMovies, setPopularMovies] = useState<MovieType[]>();
     const [topRated, setTopRated] = useState<MovieType[]>();
 
     useEffect(() => {
-        movie.getPopular().then((response) => {
-            setMovies(response);
+        movie.getPopularData().then((response) => {
+            setPopularMovies(response.results);
         })
     }, []);
 
@@ -29,7 +28,7 @@ const List: FC = () => {
                 <ul className="list-group main-list">
                     <h4 className="list-group-item header-list">Peliculas Populares</h4>
                     <div className='scroll'>
-                        {movies && movies.map((movie: MovieType) => (
+                        {popularMovies && popularMovies.map((movie: MovieType) => (
                             <li className="list-group-item movie-item">
                                 <img src={imgBase + imgWidth + movie.poster_path} className='list-img' alt="" /><a className='movie-name' href={"/details/" + movie.id} >{movie.title}</a>
                             </li>

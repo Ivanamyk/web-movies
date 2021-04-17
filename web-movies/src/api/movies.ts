@@ -1,23 +1,28 @@
 import { MovieType, VideoType } from './../types';
 import { api } from './api'
 
-type GetMoviesResponse = {
+export type GetMoviesResponse = {
     results: MovieType[],
     page: number,
     total_pages: number,
     total_results: number
 }
 
-const getPopular = async (): Promise<MovieType[]> => {
-    const { data } = await api.get<GetMoviesResponse>('/movie/popular')
-    return data.results;
+const getPopular = async (page: number): Promise<GetMoviesResponse> => {
+    const { data } = await api.get<GetMoviesResponse>(`/movie/popular?page=${page}`)
+    return data;
 };
+
+const getPopularData = async (): Promise<GetMoviesResponse> => {
+    const { data } = await api.get<GetMoviesResponse>(`/movie/popular`)
+    return data;
+};
+
 
 const getTopRated = async (): Promise<MovieType[]> => {
-    const { data } = await api.get<GetMoviesResponse>('/movie/top_rated')
+    const { data } = await api.get<GetMoviesResponse>(`movie/top_rated`)
     return data.results;
 };
-
 
 const getNewMovies = async (): Promise<MovieType[]> => {
     const { data } = await api.get<GetMoviesResponse>('/movie/now_playing')
@@ -41,7 +46,7 @@ const getSearch = async (query: string): Promise<MovieType[]> => {
     return data.results;
 };
 
-export const movie = { getPopular, getTopRated, getNewMovies, getId, getVid, getSearch };
+export const movie = { getPopular, getPopularData, getTopRated, getNewMovies, getId, getVid, getSearch };
 
 
 
