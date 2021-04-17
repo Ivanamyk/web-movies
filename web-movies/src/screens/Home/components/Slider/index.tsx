@@ -12,13 +12,14 @@ const Slider: FC<Props> = () => {
     const [movies, setMovies] = useState<MovieType[]>();
 
     useEffect(() => {
-        movie.getPopular().then((response) => {
-            setMovies(response);
+        movie.getPopularData().then((response) => {
+            setMovies(response.results);
         })
     }, []);
 
     const imgBase = "https://image.tmdb.org/t/p/"
     const imgWith = "w1280"
+
     const topTen = movies && movies.slice(0, 10)
 
     return (
