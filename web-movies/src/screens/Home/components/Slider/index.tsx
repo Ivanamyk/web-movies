@@ -12,22 +12,20 @@ const Slider: FC<Props> = () => {
     const [movies, setMovies] = useState<MovieType[]>();
 
     useEffect(() => {
-        movie.getPopular().then((response) => {
-            setMovies(response);
+        movie.getPopularData().then((response) => {
+            setMovies(response.results);
         })
     }, []);
 
     const imgBase = "https://image.tmdb.org/t/p/"
     const imgWith = "w1280"
 
-    const topFive = movies && movies.slice(0, 5)
-
-    // const topMovies = movies && movies.filter(movie => movie.vote_average >= 8)
+    const topTen = movies && movies.slice(0, 10)
 
     return (
         <>
             <Carousel fade>
-                {topFive && topFive.map((movie: MovieType) => (
+                {topTen && topTen.map((movie: MovieType) => (
                     <Carousel.Item interval={1800}>
                         <img
                             className="d-block slider"
