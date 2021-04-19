@@ -13,53 +13,53 @@ const Paginator: FC = () => {
     const [endPage, setEndPage] = useState<number>(1)
 
 
-    useEffect(() => {
-        movie.getPopularData()
-            .then((response) => {
-                setMoviesData(response)
-                setTotalPages(response.total_pages)
-            })
-    }, []);
+    // useEffect(() => {
+    //     movie.getPopularData()
+    //         .then((response) => {
+    //             setMoviesData(response)
+    //             setTotalPages(response.total_pages)
+    //         })
+    // }, []);
 
-    useEffect(() => {
-        setStartPage(() => {
-            return page > 0 ? page : 1
-        })
+    // useEffect(() => {
+    //     setStartPage(() => {
+    //         return page > 0 ? page : 1
+    //     })
 
-        setEndPage(() => {
-            return page < (totalPages!) ? page + 5 : totalPages!
-        })
-    }, [page, totalPages])
+    //     setEndPage(() => {
+    //         return page < (totalPages!) ? page + 5 : totalPages!
+    //     })
+    // }, [page, totalPages])
 
 
-    const [arrayItems, setArrayItems] = useState<number[]>([]);
+    // const [arrayItems, setArrayItems] = useState<number[]>([]);
 
-    useEffect(() => {
-        let myPagesArray: number[] = []
-        if (totalPages) {
-            for (let number = 1; number <= totalPages; number++) {
-                myPagesArray.push(number);
-            }
-            setArrayItems(myPagesArray)
-        }
+    // useEffect(() => {
+    //     let myPagesArray: number[] = []
+    //     if (totalPages) {
+    //         for (let number = 1; number <= totalPages; number++) {
+    //             myPagesArray.push(number);
+    //         }
+    //         setArrayItems(myPagesArray)
+    //     }
 
-    }, [totalPages]);
+    // }, [totalPages]);
 
-    useEffect(() => {
-        if (arrayItems) {
-            for (let page of arrayItems) {
-                movie.getPopular(page).then((response) => {
-                    console.log(response)
-                })
-            }
-        }
+    // useEffect(() => {
+    //     if (arrayItems) {
+    //         for (let page of arrayItems) {
+    //             movie.getPopular(page).then((response) => {
+    //                 console.log(response)
+    //             })
+    //         }
+    //     }
 
-    }, []);
+    // }, []);
 
-    let pagesArray = []
-    for (let pag of arrayItems) {
-        pagesArray.push(<Pagination.Item>{pag}</Pagination.Item>)
-    }
+    // let pagesArray = []
+    // for (let pag of arrayItems) {
+    //     pagesArray.push(<Pagination.Item>{pag}</Pagination.Item>)
+    // }
 
     return (
         <div className='paginator-container'>

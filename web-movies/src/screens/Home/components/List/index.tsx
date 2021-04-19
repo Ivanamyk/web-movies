@@ -8,8 +8,8 @@ const List: FC = () => {
     const [topRated, setTopRated] = useState<MovieType[]>();
 
     useEffect(() => {
-        movie.getPopularData().then((response) => {
-            setPopularMovies(response.results);
+        movie.getPopular().then((response) => {
+            setPopularMovies(response);
         })
     }, []);
 

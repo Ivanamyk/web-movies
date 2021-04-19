@@ -12,8 +12,8 @@ const Slider: FC<Props> = () => {
     const [movies, setMovies] = useState<MovieType[]>();
 
     useEffect(() => {
-        movie.getPopularData().then((response) => {
-            setMovies(response.results);
+        movie.getPopular().then((response) => {
+            setMovies(response);
         })
     }, []);
 

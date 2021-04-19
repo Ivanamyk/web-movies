@@ -8,14 +8,14 @@ export type GetMoviesResponse = {
     total_results: number
 }
 
-const getPopular = async (page: number): Promise<GetMoviesResponse> => {
-    const { data } = await api.get<GetMoviesResponse>(`/movie/popular?page=${page}`)
-    return data;
-};
+// const getPopular = async (page: number): Promise<GetMoviesResponse> => {
+//     const { data } = await api.get<GetMoviesResponse>(`/movie/popular?page=${page}`)
+//     return data;
+// };
 
-const getPopularData = async (): Promise<GetMoviesResponse> => {
+const getPopular = async (): Promise<MovieType[]> => {
     const { data } = await api.get<GetMoviesResponse>(`/movie/popular`)
-    return data;
+    return data.results;
 };
 
 
@@ -46,7 +46,7 @@ const getSearch = async (query: string): Promise<MovieType[]> => {
     return data.results;
 };
 
-export const movie = { getPopular, getPopularData, getTopRated, getNewMovies, getId, getVid, getSearch };
+export const movie = { getPopular, getTopRated, getNewMovies, getId, getVid, getSearch };
 
 
 
