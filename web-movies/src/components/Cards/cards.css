@@ -1,11 +1,12 @@
 .main-pg{
     background-color: black;
-    min-height: 600px;
 }
 .page-title{
     font-size: 26px;
-    margin: 42px;
+    padding-top: 43px;
+    padding-bottom: 43px;
     text-align: center;
+    color: #999595;
 }
 .nm-card{
     padding: 1px;
@@ -19,7 +20,7 @@
     text-align: center;
     padding-bottom: 10px;
     border-bottom: #d3d0d063 solid 0.1rem;
-    font-size: 2.95rem;
+    font-size: 1rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .card-img {

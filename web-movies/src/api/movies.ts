@@ -8,13 +8,23 @@ export type GetMoviesResponse = {
     total_results: number
 }
 
-const getPopular = async (page: number): Promise<GetMoviesResponse> => {
-    const { data } = await api.get<GetMoviesResponse>(`/movie/popular?page=${page}`)
-    return data;
+const getPopular = async (page: number): Promise<MovieType[]> => {
+    const { data } = await api.get<GetMoviesResponse>(`movie/popular?page=${page}`)
+    return data.results;
 };
 
 const getPopularData = async (): Promise<GetMoviesResponse> => {
-    const { data } = await api.get<GetMoviesResponse>(`/movie/popular`)
+    const { data } = await api.get<GetMoviesResponse>('movie/popular')
+    return data;
+};
+
+const getLatest = async (page: number): Promise<MovieType[]> => {
+    const { data } = await api.get<GetMoviesResponse>(`movie/upcoming?page=${page}`)
+    return data.results;
+};
+
+const getLatestData = async (): Promise<GetMoviesResponse> => {
+    const { data } = await api.get<GetMoviesResponse>('movie/upcoming')
     return data;
 };
 
@@ -23,12 +33,6 @@ const getTopRated = async (): Promise<MovieType[]> => {
     const { data } = await api.get<GetMoviesResponse>(`movie/top_rated`)
     return data.results;
 };
-
-const getNewMovies = async (): Promise<MovieType[]> => {
-    const { data } = await api.get<GetMoviesResponse>('/movie/now_playing')
-    return data.results;
-};
-
 
 const getId = async (id: string) => {
     const data = await api.get<MovieType>('/movie/' + id)
@@ -46,7 +50,7 @@ const getSearch = async (query: string): Promise<MovieType[]> => {
     return data.results;
 };
 
-export const movie = { getPopular, getPopularData, getTopRated, getNewMovies, getId, getVid, getSearch };
+export const movie = { getPopular, getPopularData, getTopRated, getLatest, getLatestData, getId, getVid, getSearch };
 
 
 

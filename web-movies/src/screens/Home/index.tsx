@@ -1,17 +1,14 @@
 import React, { FC } from 'react'
-import { Header, Footer } from '../../components/Layout/components'
+import { Layout } from '../../components/Layout'
 import { Slider, List } from './components'
-import './home.css'
 
 const Home: FC = () => {
     return (
         <>
-            <Header />
-            <div className="main-pg">
+            <Layout>
                 <Slider />
                 <List />
-            </div>
-            <Footer />
+            </ Layout>
         </>
     )
 }

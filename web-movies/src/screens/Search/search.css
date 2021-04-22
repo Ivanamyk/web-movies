@@ -1,13 +1,10 @@
-.main-pg{
-    background-color: black;
-    min-height: 600px;
-}
 .search-group{
-    margin-top: 55px;
+    padding-top: 43px;
+    padding-bottom: 43px;
 }
 .search-bar{
     border-radius: 14px;
-    background-color: #f5f1f165;
+    background-color: #ffffffcb;
     margin-bottom: 50px;
 }
 .search-bar:hover{
@@ -15,7 +12,7 @@
 }
 .title-search{
     text-align: center;
-    margin-bottom: 25px;
+    color: #999595;
 }
 .search-card{
     padding: 1px;

@@ -3,17 +3,15 @@ import { movie } from './../../api/movies'
 import { MovieType } from '../../types';
 import { useHistory } from "react-router-dom";
 import { Form, Card, Button } from 'react-bootstrap'
+import wallSearch from '../../../src/assets/img/wall-search.jpg'
+import noImg from '../../../src/assets/img/not-found.jpg'
 import * as Icon from 'react-bootstrap-icons'
-import { Header, Footer } from '../../components/Layout/components'
+import { Layout } from '../../components/Layout'
 import './search.css'
 
 const Search: FC = () => {
     const [query, setQuery] = useState('');
     const [movieCard, setMovieCard] = useState<MovieType[]>();
-
-    // const queryString = window.location.search;
-    // const urlParams = new URLSearchParams(queryString);
-    // const searchQuery = urlParams.get('query')
 
     const history = useHistory();
 
@@ -30,36 +28,36 @@ const Search: FC = () => {
     }, [query]);
 
     const imgBase = "https://image.tmdb.org/t/p/"
-    const imgWith = "w300"
+    const imgWidth = "w300"
 
     return (
         <>
-            <Header />
-            <div className="main-pg">
-                <Form className='container col-6 search-group'>
-                    <Form.Group controlId="formBasicEmail">
-                        <h4 className='title-search'>Buscar Peliculas</h4>
-                        <Form.Control className='search-bar' type="text" value={query} onChange={onChange} />
-                    </Form.Group>
-                </Form>
-                <div className='row'>
-                    {movieCard && movieCard.map((movie: MovieType) => (
-                        <Card className='search-card' style={{ width: '15rem' }}>
+            <Layout>
+                <div className='main-pg' style={{ backgroundImage: `url(${wallSearch})` }}>
+                    <Form className='container col-6 search-group'>
+                        <Form.Group controlId="formBasicEmail">
+                            <h4 className='title-search'>Buscar Peliculas</h4>
+                            <Form.Control className='search-bar' type="text" value={query} onChange={onChange} />
+                        </Form.Group>
+                    </Form>
+                    <div className='row'>
+                        {movieCard && movieCard.map((movie: MovieType) => (
+                            <Card className='search-card' style={{ width: '15rem' }}>
 
-                            <Card.Img variant="top" src={imgBase + imgWith + movie.poster_path} />
+                                <Card.Img variant="top" src={movie.poster_path ? imgBase + imgWidth + movie.poster_path : noImg} />
 
-                            <Card.Body className='card-body'>
-                                <Card.Title>{movie.title}</Card.Title>
-                                <Button className='eye-button' type='button' href={"/details/" + movie.id}>
-                                    <Icon.EyeFill size={20} />
-                                </Button>
-                            </Card.Body>
-                        </Card>
-                    ))
-                    }
+                                <Card.Body className='card-body'>
+                                    <Card.Title>{movie.title}</Card.Title>
+                                    <Button className='eye-button' type='button' href={"/details/" + movie.id}>
+                                        <Icon.EyeFill size={20} />
+                                    </Button>
+                                </Card.Body>
+                            </Card>
+                        ))
+                        }
+                    </div>
                 </div>
-            </div>
-            <Footer />
+            </ Layout>
         </>
     )
 }

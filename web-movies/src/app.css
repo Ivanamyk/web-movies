@@ -1,4 +1,6 @@
 .App{
     background-color: black;
-    min-height: 1000px;
+}
+body{
+    background-color: black;
 }
