@@ -1,9 +1,9 @@
 import React, { FC, useEffect, useState } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
-import { Header, Footer } from './../../components/Layout/components'
+import { Layout } from './../../components/Layout'
 import { movie } from './../../api/movies'
 import { MovieType } from '../../types';
-import { IdMovie } from './components/IdMovie'
+import { IdMovie, Spinner } from './components'
 
 const Details: FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
     const id = match.params.id
@@ -17,13 +17,14 @@ const Details: FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
 
     return (
         <>
-            <Header />
-            <div>
-                {details
-                    ? <IdMovie movies={details} />
-                    : ''}
-            </div>
-            <Footer />
+            <Layout>
+                <div>
+                    {details
+                        ? <IdMovie movies={details} />
+                        : <Spinner />
+                    }
+                </div>
+            </ Layout>
         </>
     )
 }

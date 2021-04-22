@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 import { RouteComponentProps } from 'react-router'
+import Loader from "react-loader-spinner";
 import { MovieType } from './../../types'
 import { movie } from './../../api/movies'
 import { Paginator, Cards, Layout } from './../../components'
