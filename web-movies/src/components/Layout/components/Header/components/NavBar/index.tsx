@@ -24,10 +24,10 @@ const NavBar: FC = () => {
                                 <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/new-movies">Últimos Lanzamientos</Link>
+                                <Link className="nav-link" to="/new-movies/1">Últimos Lanzamientos</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/popular">Populares</Link>
+                                <Link className="nav-link" to="/popular/1">Populares</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/search">Buscar</Link>
