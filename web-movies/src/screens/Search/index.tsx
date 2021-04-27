@@ -36,7 +36,7 @@ const Search: FC = () => {
                 <div className='main-pg' style={{ backgroundImage: `url(${wallSearch})` }}>
                     <Form className='container col-6 search-group'>
                         <Form.Group controlId="formBasicEmail">
-                            <h4 className='title-search'>Buscar Peliculas</h4>
+                            <h4 className='title-search'>Search Movies</h4>
                             <Form.Control className='search-bar' type="text" value={query} onChange={onChange} />
                         </Form.Group>
                     </Form>

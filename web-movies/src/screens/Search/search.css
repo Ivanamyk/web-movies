@@ -13,7 +13,9 @@
 }
 .title-search{
     text-align: center;
-    color: #999595;
+    color: #fff;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 .search-card{
     padding: 1px;
