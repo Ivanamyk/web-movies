@@ -4,9 +4,10 @@
 }
 .search-bar{
     border-radius: 14px;
-    background-color: #ffffffcb;
+    background-image: linear-gradient(to right, rgb(243, 240, 240) , rgb(73, 73, 73));
     margin-bottom: 50px;
 }
+
 .search-bar:hover{
     border-color: #7e9cee;
 }

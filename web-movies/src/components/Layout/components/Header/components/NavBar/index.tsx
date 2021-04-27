@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { PopLogo } from './components/PopLogo'
+import logo from './../../../../../../assets/img/appLogo.jpg'
 import './navBar.css'
 
 const NavBar: FC = () => {
@@ -9,7 +9,7 @@ const NavBar: FC = () => {
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
                     <span className="navbar-brand">
-                        <PopLogo />
+                        <img src={logo} className='logo' />
                     </span>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"><svg viewBox="0 0 100 80" width="40" height="40">
@@ -24,13 +24,13 @@ const NavBar: FC = () => {
                                 <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/new-movies/1">Últimos Lanzamientos</Link>
+                                <Link className="nav-link" to="/new-movies/1">New Movies</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/popular/1">Populares</Link>
+                                <Link className="nav-link" to="/popular/1">Most Popular</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/search">Buscar</Link>
+                                <Link className="nav-link" to="/search">Search</Link>
                             </li>
                         </ul>
                     </div>
