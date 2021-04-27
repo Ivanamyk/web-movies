@@ -1,37 +1,90 @@
-.header-list {
-  background-color: #0e1527;
-  color: #fff;
-  font-size: 20px;
-  text-align: center;
-}
-.main-list{
-  background-color: #0e1527;
-}
-.list-table{
-  margin-bottom: 4rem;
-   margin-right: 4rem;
-   margin-left: 4rem;
-}
-.list-img{
-    width: 50px;
-}
-.scroll{
-  max-height: 50vh;
-  overflow-y: auto;
+.movie-img{
+    width: 150px;
 }
 .movie-name{
-  margin-left: 30px;
-  color: #ffff;
-  text-decoration: none ;
+  color: rgb(83, 83, 83);
+  text-decoration: none;
 }
 .movie-name:hover{
-  color: black;
+color:aqua
 }
-.movie-item{
-  background: linear-gradient(to right, #000003, #1064ca56);
-  color: #ffff;
-  
+
+ul > li{
+  display:inline-block;
 }
-.movie-item:hover{
-background-color: #e2eaf3;
-}
+
+/* 
+      :nth-of-type(1) {
+        top:0; bottom:0; left:0;
+        background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+      }
+      :nth-of-type(2) {
+        top:0; bottom:0; right: 0;
+        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+      }  */
+    
+      #carouselExampleControls{
+        margin-top: 70px;
+      }
+   .slider-header{
+     color: #ffff;
+    margin-left: 30px;
+    font-size: 1.2rem;
+   }
+      
+  .item-slider {
+        flex: 0 0 10.5%;
+        text-align: center;
+        transition: transform 300ms ease 100ms;
+      }
+  .slider-btn{
+        background:black;
+        border: transparent;
+      }
+  .container-btns{
+        text-align: center;
+        width: 20rem;
+      }
+  .arrow, .arrow2{
+        color: #ffff;
+        padding: 2px;
+      }
+      .section1{
+        margin-top: 5rem;
+      }
+      .section2{
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+      }
+      .container-slider {
+        display: flex;
+        padding: 27px;
+      }
+      
+      .item-slider {
+        position: relative;
+        display: block;
+        flex: 1 1 0px;
+        transition: transform 500ms;
+      }
+      
+      .container-slider:focus-within .item-slider,
+      .container-slider:hover .item-slider {
+        transform: translateX(-15%);
+      }
+      
+      .item-slider:focus ~ .item-slider,
+      .item-slider:hover ~ .item-slider {
+        transform: translateX(15%);
+      }
+      
+      .container-slider .item-slider:focus,
+      .container-slider .item-slider:hover {
+        transform: scale(1.3);
+        z-index: 1;
+      }
+      
+      .item-slider img {
+        display: block;
+        max-width: 100%;
+      }
