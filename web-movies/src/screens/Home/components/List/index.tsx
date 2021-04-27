@@ -34,7 +34,7 @@ const List: FC = () => {
         <>
             <section className='section1'>
                 <div id="carouselExampleControls" className="carousel slide" data-interval="false">
-                    <h4 className="slider-header">Top Rated</h4>
+                    <h4 className="slider-header"><Icon.Stars /> Top Rated</h4>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <ul className="container-slider">
@@ -69,7 +69,7 @@ const List: FC = () => {
             </section>
             <section className='section2'>
                 <div id="carouselExampleControls2" className="carousel slide" data-interval="false">
-                    <h4 className="slider-header">Most Popular</h4>
+                    <h4 className="slider-header"><Icon.Stars /> Most Popular</h4>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <ul className="container-slider">
