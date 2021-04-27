@@ -33,6 +33,7 @@
 }
 .genres{
     font-size: 12px;
+    text-decoration: none;
 }
 .btn-trailer{
     margin-top: 3rem;

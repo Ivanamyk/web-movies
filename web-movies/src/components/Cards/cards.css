@@ -1,24 +1,28 @@
 .main-pg{
     background-color: black;
 }
+.card{
+    background-color: transparent;
+    box-shadow: 10px 10px 20px #57575734;
+}
 .page-title{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     font-size: 26px;
-    padding-top: 43px;
-    padding-bottom: 43px;
     text-align: center;
-    color: #999595;
+    color: #ffff;
+    font-family: 'Cinzel', serif;
 }
 .nm-card{
     padding: 1px;
-    margin: 13px;
+    margin: 1rem;
 }
 .nm-card:hover{
     box-shadow: 0px 0px 14px 4px #ccc;
 }
 .nm-title{
-    margin-top: 15px;
+    color: rgb(187, 187, 187);
     text-align: center;
-    padding-bottom: 10px;
     border-bottom: #d3d0d063 solid 0.1rem;
     font-size: 1rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -27,8 +31,7 @@
     margin-bottom: 15px;
 }
 .eye-btn{
-    margin: 5px;
-    color:#999595;
+    color:#b4b4b4;
     align-self: center;
     width: 3rem;
     background-color: transparent;

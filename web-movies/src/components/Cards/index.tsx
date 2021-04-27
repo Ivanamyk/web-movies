@@ -1,5 +1,4 @@
 import React, { FC } from "react"
-// import noImg from '../../img/image-not-available.png'
 import { MovieType } from '../../types'
 import { Card, Button } from 'react-bootstrap'
 import * as Icon from 'react-bootstrap-icons'
@@ -8,19 +7,19 @@ import './cards.css'
 interface Props {
     pag: number;
     moviesList: MovieType[] | undefined;
+    title: string,
 }
 
-const Cards: FC<Props> = ({ moviesList }) => {
+const Cards: FC<Props> = ({ moviesList, title }) => {
 
     const imgBase = "https://image.tmdb.org/t/p/"
     const imgWidth = "w300"
 
-
     return (
         <>
             <div className="main-pg">
-                <h2 className="page-title">Más Populares</h2>
-                <div className='row'>
+                <h2 className="page-title">{title}</h2>
+                <div className='row justify-content-center'>
                     {moviesList && moviesList.map((movie: MovieType) => (
                         <Card className='nm-card' style={{ width: '15rem' }}>
                             <Card.Img className='card-img' variant="top" title={movie.title} src={imgBase + imgWidth + movie.poster_path} />

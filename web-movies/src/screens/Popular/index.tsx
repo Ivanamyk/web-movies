@@ -29,7 +29,8 @@ const Popular: FC<RouteComponentProps<{ pag: string }>> = ({ match }) => {
         <>
             <Layout >
                 <Cards pag={page}
-                    moviesList={popularMovies} />
+                    moviesList={popularMovies}
+                    title='Most Popular' />
                 <Paginator totPages={totalPages} />
             </ Layout>
         </>
