@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/web-movies/static/css/main.644773a2.chunk.css",
+    "main.js": "/web-movies/static/js/main.e717c5e8.chunk.js",
+    "main.js.map": "/web-movies/static/js/main.e717c5e8.chunk.js.map",
+    "runtime-main.js": "/web-movies/static/js/runtime-main.55195cab.js",
+    "runtime-main.js.map": "/web-movies/static/js/runtime-main.55195cab.js.map",
+    "static/js/2.ab7dacc3.chunk.js": "/web-movies/static/js/2.ab7dacc3.chunk.js",
+    "static/js/2.ab7dacc3.chunk.js.map": "/web-movies/static/js/2.ab7dacc3.chunk.js.map",
+    "index.html": "/web-movies/index.html",
+    "static/css/main.644773a2.chunk.css.map": "/web-movies/static/css/main.644773a2.chunk.css.map",
+    "static/js/2.ab7dacc3.chunk.js.LICENSE.txt": "/web-movies/static/js/2.ab7dacc3.chunk.js.LICENSE.txt",
+    "static/media/appLogo.45e7ac08.jpg": "/web-movies/static/media/appLogo.45e7ac08.jpg",
+    "static/media/me.abbdecae.png": "/web-movies/static/media/me.abbdecae.png",
+    "static/media/not-found.c179f194.jpg": "/web-movies/static/media/not-found.c179f194.jpg",
+    "static/media/wall-search.1ecb2877.jpg": "/web-movies/static/media/wall-search.1ecb2877.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.55195cab.js",
+    "static/js/2.ab7dacc3.chunk.js",
+    "static/css/main.644773a2.chunk.css",
+    "static/js/main.e717c5e8.chunk.js"
+  ]
+}
